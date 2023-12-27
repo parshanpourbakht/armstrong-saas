@@ -5,9 +5,20 @@ import Image from "next/image";
 import { Caladea, Oswald, Poppins, Roboto, Rokkitt } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import { LayoutDashboard } from "lucide-react";
 
 
 const rokkitt = Caladea({ weight:"400", subsets: ["latin"] });
+
+const routes = [
+    {
+        label: "Dashboard",
+        icon: LayoutDashboard,
+        href: "/dashboard",
+        color: "text-sky-500",
+    }
+
+]
 
 const Sidebar = () => {
     return (
