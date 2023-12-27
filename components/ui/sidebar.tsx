@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Caladea, Oswald, Poppins, Roboto, Rokkitt } from "next/font/google";
+
+import { cn } from "@/lib/utils";
+
+
+const rokkitt = Caladea({ weight:"400", subsets: ["latin"] });
 
 const Sidebar = () => {
     return (
@@ -12,13 +18,20 @@ const Sidebar = () => {
                         <Image
                             fill
                             alt="Logo"
-                            src="/logo/png"
+                            src="/logo.png"
                         />
+    
                     </div>
+                    <div>
+                    <h1 className={cn("text-2xl", 
+                    rokkitt.className)}>
+                        Armstrong
+                    </h1>
+                    </div>
+                    
                 </Link>
             </div>
         </div>
     )
 }
-
 export default Sidebar;
