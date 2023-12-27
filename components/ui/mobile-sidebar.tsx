@@ -1,11 +1,24 @@
+"use client";
 
 import { Menu } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from './button';
 import { Sheet, SheetContent, SheetTrigger } from './sheet';
 import Sidebar from './sidebar';
 
 const MobileSidebar = () => {
+
+    //handles the hydration error
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
+
     return (
         <Sheet>
             <SheetTrigger>
